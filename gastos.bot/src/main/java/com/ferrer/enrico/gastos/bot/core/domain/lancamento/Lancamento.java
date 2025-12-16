@@ -16,12 +16,23 @@ public class Lancamento {
     private LocalDateTime data;
     private Usuario usuario;
 
-    public static Lancamento newLancamento(BigDecimal valor, Descricao descricao, Tipo tipo, LocalDateTime data, Usuario usuario){
+    public static Lancamento newLancamento(BigDecimal valor, String descricao, String tipo, Usuario usuario){
         return new Lancamento(
           Id.newId(),
           valor,
-          descricao,
-          tipo,
+          Descricao.newDescricao(descricao),
+          Tipo.fromString(tipo).orElseThrow(),
+          LocalDateTime.now(),
+          usuario
+        );
+    }
+
+    public static Lancamento existingLancamento(String id, Double valor, String descricao, String tipo, LocalDateTime data, Usuario usuario){
+        return new Lancamento(
+          Id.existingId(id),
+          BigDecimal.valueOf(valor),
+          Descricao.newDescricao(descricao),
+          Tipo.fromString(tipo).orElseThrow(),
           data,
           usuario
         );

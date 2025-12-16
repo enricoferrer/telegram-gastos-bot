@@ -20,6 +20,14 @@ public class Usuario {
         );
     }
 
+    public static Usuario existingUsuario(String idString, Long chatId, String username){
+        return new Usuario(
+                Id.existingId(idString),
+                chatId,
+                username
+        );
+    }
+
     private Usuario(Id id, Long chatId, String username) {
         this.id = id;
         this.chatId = chatId;

@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class LancamentoEntity {
@@ -33,4 +32,13 @@ public class LancamentoEntity {
 
     @CreationTimestamp
     private LocalDateTime createdAt;
+
+    public LancamentoEntity(String id, UsuarioEntity usuario, String descricao, Double valor, String tipo, LocalDateTime data) {
+        this.id = id;
+        this.usuario = usuario;
+        this.descricao = descricao;
+        this.valor = valor;
+        this.tipo = tipo;
+        this.data = data;
+    }
 }

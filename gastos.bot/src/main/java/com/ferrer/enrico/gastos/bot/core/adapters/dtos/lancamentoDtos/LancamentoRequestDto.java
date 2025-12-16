@@ -1,8 +1,11 @@
 package com.ferrer.enrico.gastos.bot.core.adapters.dtos.lancamentoDtos;
 
+import java.math.BigDecimal;
+
 public record LancamentoRequestDto(
         String descricao,
-        Double valor,
+        BigDecimal valor,
         String tipo,
-        Long usuarioChatId) {
+        Long usuarioChatId
+) {
 }
