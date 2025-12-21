@@ -2,6 +2,7 @@ package com.ferrer.enrico.gastos.bot.infrastructure.config;
 
 import com.ferrer.enrico.gastos.bot.core.application.ports.LancamentoRepositoryPort;
 import com.ferrer.enrico.gastos.bot.core.application.ports.UsuarioRepositoryPort;
+import com.ferrer.enrico.gastos.bot.core.application.usecases.lancamento.BuscarPorIdUseCase;
 import com.ferrer.enrico.gastos.bot.core.application.usecases.lancamento.BuscarPorUsuarioIdUseCase;
 import com.ferrer.enrico.gastos.bot.core.application.usecases.lancamento.DeletarLancamentoUseCase;
 import com.ferrer.enrico.gastos.bot.core.application.usecases.lancamento.SalvarLancamentoUseCase;
@@ -18,8 +19,8 @@ public class LancamentoConfig {
     }
 
     @Bean
-    public BuscarPorChatIdUseCase buscarPorChatIdUseCase(UsuarioRepositoryPort usuarioRepositoryPort){
-        return new BuscarPorChatIdUseCase(usuarioRepositoryPort);
+    public BuscarPorIdUseCase buscarPorIdUseCase(LancamentoRepositoryPort repositoryPort){
+        return new BuscarPorIdUseCase(repositoryPort);
     }
 
     @Bean
