@@ -1,4 +1,4 @@
-package com.ferrer.enrico.gastos.bot.infrastructure.persistance.adapter;
+package com.ferrer.enrico.gastos.bot.infrastructure.persistance.adapter.jpa;
 
 import com.ferrer.enrico.gastos.bot.core.application.ports.UsuarioRepositoryPort;
 import com.ferrer.enrico.gastos.bot.core.domain.usuario.Usuario;
